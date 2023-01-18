@@ -21,7 +21,8 @@ node {
 		archiveArtifacts 'target/my-app-1.0-SNAPSHOT.jar'
 		sh 'ssh-keyscan -H 52.221.194.5 >> ~/.ssh/known_hosts'
 		sh "scp -i /var/jenkins_home/workspace/submission-cicd-pipeline-iputuhariyadi/notes-implementasi-cicd.pem /var/jenkins_home/workspace/submission-cicd-pipeline-iputuhariyadi/my-app-1.0-SNAPSHOT.jar  ubuntu@52.221.194.5:/home/ubuntu/my-app-1.0-SNAPSHOT.jar"
-		sh "scp -i /var/jenkins_home/workspace/submission-cicd-pipeline-iputuhariyadi/notes-implementasi-cicd.pem /var/jenkins_home/workspace/submission-cicd-pipeline-iputuhariyadi/Dockerfile  ubuntu@52.221.194.5:/home/ubuntu/Dockerfile
+		sh "scp -i /var/jenkins_home/workspace/submission-cicd-pipeline-iputuhariyadi/notes-implementasi-cicd.pem /var/jenkins_home/workspace/submission-cicd-pipeline-iputuhariyadi/Dockerfile  ubuntu@52.221.194.5:/home/ubuntu/Dockerfile"
+		sh "ssh -i /var/jenkins_home/workspace/submission-cicd-pipeline-iputuhariyadi/notes-implementasi-cicd.pem ubuntu@52.221.194.5 < commands.txt"
 		sleep 60
         }
     }
