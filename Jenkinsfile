@@ -19,8 +19,8 @@ node {
 	stage('Deploy') {
 		sh './jenkins/scripts/deliver.sh'
 		archiveArtifacts 'target/my-app-1.0-SNAPSHOT.jar'
-		sh 'docker build -t my-app:latest .';
-		sh 'docker run -it --rm my-app';
+		sh 'docker image build -t my-app:latest .';
+		sh 'docker container run -it --rm my-app';
 		sleep 60
         }
     }
