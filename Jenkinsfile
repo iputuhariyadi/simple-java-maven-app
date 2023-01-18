@@ -17,11 +17,13 @@ node {
 	    input message: 'Lanjutkan ke tahap Deploy?', ok: 'Proceed'
 	}
 	stage('Deploy') {
+	    withEnv(["CI=true"]){
 		sh './jenkins/scripts/deliver.sh'
 		archiveArtifacts 'target/my-app-1.0-SNAPSHOT.jar'
-		sh 'docker image build -t my-app:latest .';
-		sh 'docker container run -it --rm my-app';
+		sh '/usr/local/bin/docker image build -t my-app:latest .';
+		sh '/usr/local/bin/docker container run -it --rm my-app';
 		sleep 60
+           }
         }
     }
 }
