@@ -1,4 +1,4 @@
 FROM eclipse-temurin:latest
-RUN mkdir /opt/app
-COPY my-app-1.0-SNAPSHOT.jar /opt/app
-CMD ["java", "-jar", "/opt/app/my-app-1.0-SNAPSHOT.jar"]
+RUN mkdir /app
+COPY target/my-app-1.0-SNAPSHOT.jar /app
+CMD ["java", "-jar", "/app/my-app-1.0-SNAPSHOT.jar"]
