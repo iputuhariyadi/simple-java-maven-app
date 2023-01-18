@@ -15,7 +15,6 @@ node {
         }
 	stage('Deliver') {
 		sh './jenkins/scripts/deliver.sh'
-		archiveArtifacts 'target/*.jar'
         }
     }
 }
