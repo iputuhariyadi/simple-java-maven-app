@@ -1,2 +1,0 @@
-docker build -t simple-java-maven-app .
-docker run -it --rm simple-java-maven-app
