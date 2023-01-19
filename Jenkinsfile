@@ -22,7 +22,7 @@ node {
     stage('Deploy') {
 	    archiveArtifacts 'target/my-app-1.0-SNAPSHOT.jar'
 	    docker.build("my-app:latest");
-	    sh 'docker run -it --rm my-app'
+	    sh 'docker run --rm my-app'
 	    sleep 60
     }
 }
