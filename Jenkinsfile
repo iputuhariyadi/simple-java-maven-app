@@ -20,6 +20,7 @@ node {
 	    archiveArtifacts 'target/my-app-1.0-SNAPSHOT.jar'
 	    docker.build("my-app:latest");
 	    docker.image("my-app:latest");
+	    sh 'echo test'
 	    sleep 60
         }
     }
